@@ -1,0 +1,46 @@
+/* Algemene layout voor admin panel */
+.admin-container {
+    display: flex;
+}
+
+/* Main content area */
+.admin-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.admin-content section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkred;
+}

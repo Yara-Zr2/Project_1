@@ -1,0 +1,96 @@
+/* General Styling for Checkout Page */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+.main-content {
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Checkout Container */
+.checkout-container {
+    width: 70%;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Cart Items List */
+.cart-items-list {
+    margin-bottom: 30px;
+}
+
+/* Individual Cart Item in Checkout */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item .item-info {
+    width: 100%;
+}
+
+.cart-item .item-info p {
+    margin: 5px 0;
+}
+
+/* Checkout Form Styles */
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkout-form input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.checkout-form label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Submit Button for Order */
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-submit-order {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.btn-submit-order:hover {
+    background-color: #218838;
+}

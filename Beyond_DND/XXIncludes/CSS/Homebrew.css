@@ -1,0 +1,42 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #4CAF50;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+.coming-soon {
+    width: 300px;
+    height: auto;
+}
+
+.notify-btn {
+    padding: 12px 20px;
+    margin: 15px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.notify-btn:hover {
+    background-color: #45a049;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: #888;
+}

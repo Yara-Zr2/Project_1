@@ -1,0 +1,110 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general font */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2d2d2d;
+    color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .logo img {
+    height: 100px;
+}
+
+/* Main auth container */
+.auth-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 00px 0;
+}
+
+.auth-box {
+    background: #4c4c4c;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-box h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #f39c12;
+}
+
+.auth-box label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #3e3e3e;
+    border-radius: 5px;
+    background-color: #2d2d2d;
+    color: #f4f4f4;
+}
+
+.auth-box input:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.auth-box .btn {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.auth-box .btn:hover {
+    background-color: #e67e22;
+}
+
+/* Links */
+.auth-box a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+.auth-box a:hover {
+    color: #e67e22;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

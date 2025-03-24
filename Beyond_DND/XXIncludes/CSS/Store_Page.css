@@ -1,0 +1,319 @@
+/* Ensure the entire page takes the full height */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Full height */
+    display: flex;
+    flex-direction: column; /* Stack navbar, content, and footer */
+}
+
+/* Main content area should fill the available space */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    padding-bottom: 60px; /* Prevent content from being hidden behind the footer */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;  /* Hidden by default */
+    position: fixed;  /* Stay in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    z-index: 999;  /* Make sure modal is above everything */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Cart styles */
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cart-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item .item-info {
+    text-align: left;
+}
+
+.cart-item .item-info p {
+    margin: 5px 0;
+}
+
+.cart-item .item-info .quantity {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    width: 60px;
+}
+
+/* Button styles */
+.cart-actions a,
+.cart-actions button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cart-actions button:hover,
+.cart-actions a:hover {
+    background-color: #45a049;
+}
+
+/* Remove button for cart item */
+.btn-remove-item {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-remove-item:hover {
+    background-color: #e53935;
+}
+
+/* Product listing styles */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Product box for each individual product */
+.product-box {
+    flex: 0 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.btn-add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #45a049;
+}
+
+/* Cart Button Style */
+.cart-button-container {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.go-to-cart-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF; /* Blue color for the text */
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #007BFF; /* Blue border around the text */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease;
+}
+
+.go-to-cart-link:hover {
+    color: white;
+    background-color: #007BFF; /* Change background to blue when hovered */
+    border-color: #0056b3; /* Darker blue border on hover */
+}
+
+/* Cart item container */
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cart-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item .item-info {
+    text-align: left;
+}
+
+.cart-item .item-info p {
+    margin: 5px 0;
+}
+
+/* Remove button for cart item */
+.btn-remove-item {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-remove-item:hover {
+    background-color: #e53935;
+}
+
+/* Cart actions buttons */
+.cart-actions a,
+.cart-actions button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cart-actions button:hover,
+.cart-actions a:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Checkout Page Styling */
+.checkout-container {
+    width: 80%;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.checkout-container h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.cart-items-list {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item .item-info {
+    width: 100%;
+}
+
+.cart-item .item-info p {
+    margin: 5px 0;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkout-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkout-form label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.btn-submit-order {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-submit-order:hover {
+    background-color: #218838;
+}

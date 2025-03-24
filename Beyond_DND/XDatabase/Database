@@ -1,0 +1,86 @@
+-- Create the database if it doesn't already exist
+CREATE DATABASE IF NOT EXISTS beyond_dnd;
+USE beyond_dnd;
+
+-- Users Table: For user login and registration
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Characters Table: To store characters created by users
+CREATE TABLE characters (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    race VARCHAR(50) NOT NULL,
+    class VARCHAR(50) NOT NULL,
+    level INT DEFAULT 1,
+    strength INT DEFAULT 10,
+    dexterity INT DEFAULT 10,
+    constitution INT DEFAULT 10,
+    intelligence INT DEFAULT 10,
+    wisdom INT DEFAULT 10,
+    charisma INT DEFAULT 10,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    image_url VARCHAR(255),  -- Optional column for character image
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Weapons Table: To store weapon information including custom image
+CREATE TABLE weapons (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    character_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    type ENUM('melee', 'ranged') NOT NULL,  -- Type of weapon
+    attack_bonus INT DEFAULT 0,
+    damage VARCHAR(50) NOT NULL,  -- Damage expression (e.g., "1d8", "2d6")
+    image_url VARCHAR(255),  -- Optional column for weapon image
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+-- Classes Table: For storing class details, including custom image
+CREATE TABLE classes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    image_url VARCHAR(255),  -- Optional column for class image
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Campaigns Table: For storing information about D&D campaigns
+CREATE TABLE campaigns (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,  -- The DM (Dungeon Master) who created the campaign
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Inventory Table: To store items owned by characters (e.g., weapons, potions)
+CREATE TABLE inventory (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    character_id INT NOT NULL,
+    item_name VARCHAR(100) NOT NULL,
+    item_type VARCHAR(50),
+    quantity INT DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
+);
+
+-- Homebrew Content Table: To store user-created (homebrew) races, classes, spells, etc.
+CREATE TABLE homebrew_content (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    content_type ENUM('race', 'class', 'spell', 'background', 'item') NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    image_url VARCHAR(255),  -- Optional column for custom homebrew content image
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
